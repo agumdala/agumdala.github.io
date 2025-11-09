@@ -1,0 +1,20 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.Title {
+  width: 798px;
+  height: 93px;
+  flex-shrink: 0;
+  color: var(--sds-color-text-default-default);
+  text-align: center;
+  font-family: Geist;
+  font-size: 80px;
+  font-style: light;
+  font-weight: 200;
+  line-height: 140%; /* 112px */
+  letter-spacing: -4.3px;
+}
