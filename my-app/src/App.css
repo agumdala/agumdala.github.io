@@ -1,7 +1,8 @@
 .Title {
   width: 1000px;
   height: 80px;
-  padding-top: 2%;
+  padding-top: 3%;
+  padding-left: 5%;
 }
 
 .Title h2 {
@@ -9,32 +10,36 @@
   flex-shrink: 0;
   color: var(--sds-color-text-default-default);
   text-align: left;
-  font-size: 90px;
+  font-size: 130px;
   font-style: normal;
-  font-weight: 10;
-  line-height: 60%; /* 112px */
+  font-weight: 30;
+  line-height: 80%; /* 112px */
+  letter-spacing: -4.2px;
 }
 
 .Desc {
-  padding-top: 5%;
-  width: 1400px;
+  padding-top: 4%;
+  padding-left: 3%;
+  width: 800px;
   height: 200px;
+
 }
 
 .Desc p{
   font-family: 'Geist', sans-serif;
   text-align: left;
   flex-shrink: 0;
-  font-size: 40px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 10;
   line-height: 1;
   letter-spacing: 2px;
-
+  color: #4C8EAE;
 }
 
 .Signup {
   padding-top: 5%;
+  padding-left:5%;
 }
 
 .Signup form {
