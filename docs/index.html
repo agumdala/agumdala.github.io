@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>my-app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-CW2TJrhf.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D79FsBpY.css">
+  </head>
+  <body>
+    <div id="root">
+      <form id="email-form">
+        <input type="email" id="email" placeholder="Enter your email" required />
+        <button type="submit">Sign Up</button>
+      </form>
+      <p id="status"></p>
+      
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzNtks-WcObk7_fY2qtjPFWC9POKLHICNmbqJDEF8ClQNZgVH8iOjRln1u9C3zonru_tQ/exec';
+      
+        document.getElementById('email-form').addEventListener('submit', async (e) => {
+          e.preventDefault();
+      
+          const email = document.getElementById('email').value;
+          const status = document.getElementById('status');
+      
+          try {
+            const res = await fetch(scriptURL, {
+              method: 'POST',
+              body: JSON.stringify({ email }),
+              headers: { 'Content-Type': 'application/json' },
+            });
+            const result = await res.json();
+            if (result.status === 'success') {
+              status.textContent = 'Thanks! You’re on the list.';
+            } else {
+              status.textContent = '⚠️ Something went wrong.';
+            }
+          } catch (error) {
+            status.textContent = 'Network error. Please try again.';
+          }
+        });
+      </script>
+
+    </div>
+    
+  </body>
+</html>
+
