@@ -1,8 +1,19 @@
+.logo {
+  width: 180px;
+  height: 180px;
+}
+
+.logo img {
+  width: 100%;  /* Scale image to fill the container */
+  height: 100%; /* Scale image to fill the container */
+  object-fit: contain;  /* This keeps the aspect ratio of the image intact */
+}
+
 .Title {
   width: 1000px;
-  height: 80px;
-  padding-top: 3%;
+  height: 80px; /*80*/
   padding-left: 5%;
+  margin-top: 40px;
 }
 
 .Title h2 {
@@ -38,23 +49,28 @@
 }
 
 .Signup {
-  padding-top: 5%;
-  padding-left:5%;
+  display: inline-flex; /* shrink-wrap to content: Use inline-flex to align items horizontally */
+  border: 2px solid #000000;/* optional border for visibility */
+  border-radius: 50px;   /* rounded corners */
+  height: 80px;
+  background-color: white; /* optional: better visibility */
+  margin-left: 50px;
+  align-items: center;
 }
 
 .Signup form {
   display: flex;
-  gap: 10px;
   align-items: center;
 }
 
 .Signup input[type="email"] {
-  padding: 12px 16px;
+  padding: 27px;
   font-size: 18px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
+  border-radius: 50px;
   font-family: 'Geist', sans-serif;
   min-width: 300px;
+  height: 100%;
 }
 
 .Signup input[type="email"]:disabled {
@@ -63,20 +79,21 @@
 }
 
 .Signup button {
-  padding: 12px 24px;
+  padding: 31px;
   font-size: 18px;
-  background-color: #007bff;
+  background-color: #4C8EAE;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 50px;
   cursor: pointer;
   font-family: 'Geist', sans-serif;
   font-weight: 500;
   transition: background-color 0.2s;
+  flex-shrink: 0; /* Prevent the button from shrinking */
 }
 
 .Signup button:hover:not(:disabled) {
-  background-color: #0056b3;
+  background-color: #414f5e;
 }
 
 .Signup button:disabled {
