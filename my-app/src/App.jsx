@@ -82,14 +82,14 @@ function App() {
             </button>
 
           </form>
-          {status === 'success' && (
+          
+        </div>
+        {status === 'success' && (
             <p className="status-message success">Thanks! You're on the list. </p>
           )}
           {status === 'error' && (
             <p className="status-message error">Something went wrong. Please try again.</p>
           )}
-        </div>
-
       </div>
     </>
   )
