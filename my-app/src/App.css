@@ -1,3 +1,21 @@
+/* CSS Reset for consistent sizing */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px; /* Base font size matching most elements (input, button, status) */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px; /* Match base font size */
+  font-weight: 450; /* Normal/base font weight */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .logo {
   width: 180px;
   height: 180px;
@@ -23,7 +41,7 @@
   text-align: left;
   font-size: 130px;
   font-style: normal;
-  font-weight: 30;
+  font-weight: 80;
   line-height: 80%; /* 112px */
   letter-spacing: -4.2px;
 }
@@ -42,7 +60,7 @@
   flex-shrink: 0;
   font-size: 30px;
   font-style: normal;
-  font-weight: 10;
+  font-weight: 200; /* Heavier but still light for body text */
   line-height: 1;
   letter-spacing: 2px;
   color: #4C8EAE;
@@ -55,6 +73,7 @@
   height: 80px;
   background-color: white; /* optional: better visibility */
   margin-left: 50px;
+  margin-top: 40px; /* Increased space to lower the signup container */
   align-items: center;
 }
 
