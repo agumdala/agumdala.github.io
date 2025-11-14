@@ -54,7 +54,7 @@ function App() {
   return (
     <>
     <div className="logo">
-      <img src="./src/assets/Aceprep_logo.png" />
+      <img src="/Aceprep_logo.png" alt="Aceprep logo" />
     </div>
       <div className="Title">
         <h2 className="Title">Coming Soon</h2>
