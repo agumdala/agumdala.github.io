@@ -5,9 +5,9 @@
 
 html {
   font-size: 18px; /* Base font size matching most elements (input, button, status) */
-  transform: scale(0.9);
+  /*transform: scale(0.9);
   transform-origin: top left;
-  width: 125%; /* prevents layout from shrinking */
+  width: 125%; prevents layout from shrinking */
 }
 
 body {
