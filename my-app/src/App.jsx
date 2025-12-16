@@ -53,37 +53,38 @@ function App() {
 
   return (
     <>
+    
+    <div className="content">
     <div className="logo">
       <img src="/Aceprep_logo.png" alt="Aceprep logo" />
     </div>
-      <div className="Title">
-        <h2 className="Title">Coming Soon</h2>
-        <div className="Desc">
-          <p className="Desc">Aceprep is opening up it's beta version to a limited pool of students. Sign up now to get on the list and breeze through your finals</p>
-        </div>
+      <h2 className="title">Coming Soon</h2>
+      <p className="desc">
+      Aceprep is opening up its beta version to a limited pool of students.
+      Sign up now to get on the list and breeze through your finals
+      </p>
 
-        <div className = "Signup">
-          <form onSubmit={handleSubmit}>
+      <div className = "Signup">
+        <form onSubmit={handleSubmit}>
 
-            <input 
-              type="email" 
-              name="email" 
-              placeholder="Enter your email" 
-              required 
-              disabled={isSubmitting}
-            />
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Enter your email" 
+          required 
+          disabled={isSubmitting}
+        />
 
             <button type="submit" disabled={isSubmitting}> 
               {isSubmitting ? 'Signing Up...' : ( /*button if clicked disable issubmitting(cannot click again) */ 
                 <>
-                  <div className="arrow-circle">&gt;</div>
+                  <div className="arrow-circle"> &gt; </div>
                 </>
               )}
             </button>
 
           </form>
           
-        </div>
         {status === 'success' && (
             <p className="status-message success">Thanks! You're on the list. </p>
           )}
@@ -91,6 +92,7 @@ function App() {
             <p className="status-message error">Something went wrong. Please try again.</p>
           )}
       </div>
+    </div>
     </>
   )
 }
