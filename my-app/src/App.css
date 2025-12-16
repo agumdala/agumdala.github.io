@@ -67,9 +67,10 @@ body {
   padding-left: 5%;
   color: #4C8EAE;
   min-width:40%;
+  max-width:40%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .desc {
     font-size: 1.5rem;  /* Smaller font on tablets and mobile */
     max-width: 80%;     /* Allow more width on smaller screens */
