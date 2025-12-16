@@ -22,19 +22,20 @@ body {
   justify-content: space-around;
   flex-direction: column;
   align-items: flex-start;
+  flex-wrap: wrap;
   
 }
 
 .logo {
-  width: 10vw;       /* scales with screen size */
-  max-width: 180px;  /* same look on desktop */
+  width: 9rem;       /* scales with screen size */
+  min-width: 1rem;  /* same look on desktop */
   height: auto;
 }
 
 .logo img {
   width: 100%;  /* Scale image to fill the container */
   height: 100%; /* Scale image to fill the container */
-  object-fit: contain;  /* This keeps the aspect ratio of the image intact */
+  /*object-fit: contain;  This keeps the aspect ratio of the image intact */
 }
 
 
@@ -58,15 +59,22 @@ body {
   font-family: 'Geist', sans-serif;
   text-align: left;
   flex-shrink: 0;
+  flex-grow: 1;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 200; /* Heavier but still light for body text */
   line-height: 1;
   padding-left: 5%;
   color: #4C8EAE;
-  width:40%;
+  min-width:40%;
 }
 
+@media (max-width: 768px) {
+  .desc {
+    font-size: 1.5rem;  /* Smaller font on tablets and mobile */
+    max-width: 80%;     /* Allow more width on smaller screens */
+  }
+}
 .Signup {
   display: inline-flex; /* shrink-wrap to content: Use inline-flex to align items horizontally */
   border: 2px solid #000000;/* optional border for visibility */
