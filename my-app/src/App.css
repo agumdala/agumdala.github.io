@@ -153,46 +153,58 @@ body {
   border: 1px solid #f5c6cb;
 }
 
-/* iPhone / small mobile devices */
+/* Mobile-friendly scaling with indentation */
 @media (max-width: 480px) {
 
   html {
-    font-size: 16px; /* Slightly smaller base */
+    font-size: 14px; /* smaller base font for mobile */
   }
 
   .content {
-    align-items: center;
-    padding: 0 16px;
+    flex-direction: column;
+    align-items: flex-start;  /* keep content left-aligned */
+    padding-left: 15px;       /* indent everything */
+    padding-right: 15px;
   }
 
+  /* Logo scales with font size / screen */
   .logo {
-    width: 7rem;
+    width: 6rem;    /* smaller proportionally */
+    height: auto;   /* maintain aspect ratio */
+    margin-bottom: 15px;
   }
 
-  .title {
-    font-size: 3rem;        /* was 6rem */
-    line-height: 1;
-    letter-spacing: -1.5px;
-    padding-left: 0;
-    text-align: center;
-  }
-
-  .desc {
-    font-size: 1.1rem;
-    max-width: 100%;
-    min-width: unset;
-    padding-left: 0;
-    text-align: center;
-    line-height: 1.4;
-    margin-top: 12px;
-  }
-
-  .Signup {
+  .logo img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: contain;  /* keep image proportion */
+  }
+
+  /* Title smaller and indented */
+  .title {
+    font-size: 2rem;          /* smaller for mobile */
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    padding-left: 0;          /* indentation handled by content padding */
+  }
+
+  /* Description smaller, narrower, indented */
+  .desc {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    max-width: 90%;
+    margin-left: 1rem;       /* small indent */
+    text-align: left;
+  }
+
+  /* Signup form smaller and indented */
+  .Signup {
+    width: 95%;
     flex-direction: column;   /* stack input + button */
-    padding: 8px;
-    border-radius: 24px;
+    margin-left: 1rem;
+    margin-top: 15px;
+    padding: 6px;
+    border-radius: 20px;
   }
 
   .Signup form {
@@ -202,20 +214,20 @@ body {
 
   .Signup input[type="email"] {
     width: 100%;
-    min-width: unset;
-    padding: 18px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 6px;
   }
 
   .Signup button {
     width: 100%;
-    margin: 10px 0 0 0;
-    padding: 18px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 14px;
   }
 
   .status-message {
-    font-size: 16px;
-    text-align: center;
+    font-size: 13px;
+    margin-left: 1rem;   /* indent for alignment */
   }
 }
+
