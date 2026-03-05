@@ -121,8 +121,8 @@ html, body {
   place-items: center;
   border-radius: 999px;
   background: rgba(255,255,255,0.92);
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  /*border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);*/
   -webkit-tap-highlight-color: transparent;
 }
 
