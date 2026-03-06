@@ -58,7 +58,34 @@ html, body {
   color: #1E293B;
 }
 
+.v3-inputWithArrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;         /* space between arrow and input */
+}
 
+.v3-inputArrow {
+  font-size: 16px;       /* subtle size */
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;  /* rounded like macOS */
+  border: none;
+  background-color: #ffffff; /* light gray */
+  color: #111827;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.v3-inputArrow:hover {
+  background-color: #d1d5db; /* subtle hover effect */
+}
+
+.v3-inputArrow:active {
+  background-color: #b0b0b0; /* subtle press effect */
+}
 .v3-inputWrap{
   margin-top: 10px;
 }
@@ -187,10 +214,17 @@ html, body {
 
   .v3-input{
     width: 92vw;
-    max-width: 150px;
-    height: 30px;
-    font-size: 10px;
+    max-width: 100px;
+    height: 25px;
+    font-size: 8px;
   }
+
+  .v3-inputArrow {
+    font-weight: 300; /* lighter for small screens */
+    font-size: 12px;  /* optional: slightly smaller too */
+    color:  #d1d5db;
+  }
+
 
   .v3-frame{
     width: 94vw;

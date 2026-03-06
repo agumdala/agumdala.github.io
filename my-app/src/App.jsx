@@ -58,21 +58,25 @@ export default function App() {
         {/* Email input */}
         
         <form id="email-form" onSubmit={handleSubmit}>
-            <div className="v3-inputWrap">
-              <input
-                type="email"
-                className="v3-input"
-                placeholder="Enter your email here"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <button type="submit" style={{ display: "none" }} />
+          <div className="v3-inputWithArrow">
+            <input
+              type="email"
+              className="v3-input"
+              placeholder="Enter your email here"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") handleSubmit(e);
+              }}
+              required
+            />
+            <button type="submit" className="v3-inputArrow">
+              ➔
+            </button>
+          </div>
         </form>
-        
-        {/* Status message */}
         <p id="status">{status}</p>
+
 
         {/* Carousel */}
         <section className="v3-carousel">
