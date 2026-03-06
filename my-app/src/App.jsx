@@ -9,11 +9,37 @@ const slides = [
   { id: 2, title: "Syllabus", img: syllabusScreenshot },
 ];
 
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzNtks-WcObk7_fY2qtjPFWC9POKLHICNmbqJDEF8ClQNZgVH8iOjRln1u9C3zonru_tQ/exec';
+
 export default function App() {
   const [active, setActive] = useState(0);
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("");
 
   const prev = () => setActive((i) => (i - 1 + slides.length) % slides.length);
   const next = () => setActive((i) => (i + 1) % slides.length);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // prevent page reload
+    if (!email.trim()) {
+      setStatus("Please enter your email.");
+      return;
+    }
+
+    setStatus("Submitting...");
+
+    try {
+      const res = await fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify({ email }),
+        headers: { "Content-Type": "application/json" },
+      });
+      const result = await res.json();
+      setStatus(result.status === "success" ? "Thanks! You’re on the list." : "⚠️ Something went wrong.");
+    } catch (error) {
+      setStatus("Network error. Please try again.");
+    }
+  };
 
   return (
     <div className="v3-page">
@@ -29,10 +55,26 @@ export default function App() {
           to beta test our site!
         </p>
 
-        <div className="v3-inputWrap">
-          <input className="v3-input" placeholder="Enter your email here" />
-        </div>
+        {/* Email input */}
+        
+        <form id="email-form" onSubmit={handleSubmit}>
+            <div className="v3-inputWrap">
+              <input
+                type="email"
+                className="v3-input"
+                placeholder="Enter your email here"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <button type="submit" style={{ display: "none" }} />
+        </form>
+        
+        {/* Status message */}
+        <p id="status">{status}</p>
 
+        {/* Carousel */}
         <section className="v3-carousel">
           <button
             className="v3-arrow v3-left"

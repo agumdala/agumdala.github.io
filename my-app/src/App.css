@@ -58,11 +58,19 @@ html, body {
   color: #1E293B;
 }
 
-/* email input */
+
 .v3-inputWrap{
   margin-top: 10px;
 }
 
+#status {
+  font-size: 12px;       /* smaller text */
+  color: #4B5563;        /* optional: subtle gray */
+  margin-top: 4px;       /* reduce vertical space */
+  margin-bottom: 0;      /* remove extra space after */
+  text-align: center;    /* align with input/carousel */
+  line-height: 1.2;      /* tighter spacing */
+}
 .v3-input{
   width: 260px;
   height: 38px;
