@@ -9,7 +9,7 @@ const slides = [
   { id: 2, title: "Syllabus", img: syllabusScreenshot },
 ];
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzNtks-WcObk7_fY2qtjPFWC9POKLHICNmbqJDEF8ClQNZgVH8iOjRln1u9C3zonru_tQ/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzZE0maYtzcdt3bb3dy-yg0q-K8onwoEDnahArsZYMNRsRCMYhKHoCu2TvQyXVYDeX4bw/exec';
 
 export default function App() {
   const [active, setActive] = useState(0);
