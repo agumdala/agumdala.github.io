@@ -120,8 +120,8 @@ html, body {
   display: grid;
   place-items: center;
   border-radius: 999px;
-  background: rgba(255,255,255,0.92);
-  /*border: 1px solid #e5e7eb;
+  /*background: rgba(255,255,255,0.92);
+  border: 1px solid #e5e7eb;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);*/
   -webkit-tap-highlight-color: transparent;
 }
@@ -164,7 +164,7 @@ html, body {
   }
 
   .v3-main{
-    padding: 92px 16px 44px;
+    padding: 92px 90px 44px;
     gap: 14px;
   }
 
@@ -173,27 +173,47 @@ html, body {
   }
 
   .v3-subtitle{
-    font-size: 15px;
-    padding: 0 4px;
+    font-size: 10px;
+    padding: 10px 4px;
   }
 
   .v3-input{
-    width: min(360px, 92vw);
-    height: 42px;
-    font-size: 14px;
+    width: 92vw;
+    max-width: 150px;
+    height: 30px;
+    font-size: 10px;
   }
 
   .v3-frame{
-    width: min(520px, 94vw);
-    border-radius: 12px;
+    width: 94vw;
+    max-width: 220px;
+    margin-top: 10px;
   }
 
-  .v3-left{ left: 8px; }
-  .v3-right{ right: 8px; }
+  .v3-left{ left: 25px; }
+  .v3-right{ right: 25px; }
 
   .v3-arrow{
     width: 46px;
     height: 46px;
     font-size: 34px;
+    top: 45%;
+  }
+
+  .v3-carousel{
+    /*margin-top: 0px;*/
+    gap: 0px;
+  }
+
+  .v3-dots{
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .v3-dot{
+    margin-top: 25px;
+    width: 8px;
+    height: 8px;
+    padding: 0;   
   }
 }
