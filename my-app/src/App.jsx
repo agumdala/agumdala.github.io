@@ -19,25 +19,49 @@ export default function App() {
   const prev = () => setActive((i) => (i - 1 + slides.length) % slides.length);
   const next = () => setActive((i) => (i + 1) % slides.length);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // prevent page reload
-    if (!email.trim()) {
-      setStatus("Please enter your email.");
-      return;
-    }
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzZE0maYtzcdt3bb3dy-yg0q-K8onwoEDnahArsZYMNRsRCMYhKHoCu2TvQyXVYDeX4bw/exec'
 
-    setStatus("Submitting...");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus('');
+
+    const formData = new FormData(e.target);
+    const email = formData.get('email');
 
     try {
-      const res = await fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify({ email }),
-        headers: { "Content-Type": "application/json" },
+      // Google Apps Script expects FormData format
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: formData,
       });
-      const result = await res.json();
-      setStatus(result.status === "success" ? "Thanks! You’re on the list." : "⚠️ Something went wrong.");
-    } catch (error) {
-      setStatus("Network error. Please try again.");
+      
+      if (response.ok) {
+        const result = await response.text();
+        // Google Apps Script typically returns HTML or text
+        setStatus('success');
+        e.target.reset(); // Clear the form
+        setTimeout(() => setStatus(''), 5000); // Clear message after 5 seconds
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      // If CORS fails, try with no-cors mode (can't read response)
+      try {
+        await fetch(scriptURL, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors',
+        });
+        setStatus('success');
+        e.target.reset();
+        setTimeout(() => setStatus(''), 5000);
+      } catch (noCorsErr) {
+        setStatus('error');
+        console.error('Error:', noCorsErr);
+      }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
