@@ -15,6 +15,7 @@ export default function App() {
   const [active, setActive] = useState(0);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const prev = () => setActive((i) => (i - 1 + slides.length) % slides.length);
   const next = () => setActive((i) => (i + 1) % slides.length);
@@ -89,10 +90,8 @@ export default function App() {
               placeholder="Enter your email here"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") handleSubmit(e);
-              }}
               required
+              disabled={isSubmitting}
             />
             <button type="submit" className="v3-inputArrow">
               ➔
