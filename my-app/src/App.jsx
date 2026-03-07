@@ -84,6 +84,7 @@ export default function App() {
           <div className="v3-inputWithArrow">
             <input
               type="email"
+              name="email"
               className="v3-input"
               placeholder="Enter your email here"
               value={email}
