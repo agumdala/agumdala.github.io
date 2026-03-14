@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-import calendarScreenshot from "./assets/Calendar_screenshot.png";
+import calendarScreenshot from "./assets/Calendar.png";
 import syllabusScreenshot from "./assets/Syllabus.png";
 
 const slides = [
