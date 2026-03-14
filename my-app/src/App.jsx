@@ -3,8 +3,9 @@ import "./App.css";
 
 import calendarScreenshot from "./assets/RealCalendar.png";
 import syllabusScreenshot from "./assets/Syllabus.png";
+import logoScreenshot from "./assets/Aceprep_logo.png";
 
-/*/Users/shyamgumdala/Landing_Page_AcePrep/agumdala.github.io/docs/assets/Calendar.png*/
+//Users/shyamgumdala/Landing_Page_AcePrep/agumdala.github.io/my-app/src/assets/Aceprep_logo.png*/
 
 const slides = [
   { id: 1, title: "My Calendar", img: calendarScreenshot },
@@ -68,8 +69,9 @@ export default function App() {
 
   return (
     <div className="v3-page">
-      <div className="v3-logo">AcePrep</div>
-
+      <div className="v3-logo">
+        <img src={logoScreenshot} alt="AcePrep logo" />
+      </div>
       <main className="v3-main">
         <h1 className="v3-title">
           Welcome to <br /> AcePrep

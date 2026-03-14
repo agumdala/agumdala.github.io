@@ -19,12 +19,17 @@ html, body {
   width: 44px;
   height: 44px;
   border-radius: 999px;
-  border: 1px solid #d1d5db;
+  /*border: 1px solid #d1d5db;*/
   display: grid;
   place-items: center;
   font-size: 10px;
   color: #111827;
   background: #fff;
+}
+
+.v3-logo img {
+  height: 60px;
+  width: auto;
 }
 
 /* center everything */
@@ -198,6 +203,10 @@ html, body {
     left: 16px;
   }
 
+  .v3-logo img {
+    display: none;
+  }
+
   .v3-main{
     padding: 92px 90px 44px;
     gap: 14px;
@@ -218,6 +227,8 @@ html, body {
     height: 25px;
     font-size: 8px;
   }
+
+  
 
   .v3-inputArrow {
     font-weight: 300; /* lighter for small screens */
