@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 
-import calendarScreenshot from "./assets/Calendar.png";
-import syllabusScreenshot from "./assets/Syllabus-CAl-Fvrn.png";
+import calendarScreenshot from "./assets/RealCalendar.png";
+import syllabusScreenshot from "./assets/Syllabus.png";
 
 /*/Users/shyamgumdala/Landing_Page_AcePrep/agumdala.github.io/docs/assets/Calendar.png*/
 
